@@ -15,6 +15,7 @@ for a single team instead of the entire league.
 `?expand=team.schedule.next` Returns details of the upcoming game for a team
 
 `?expand=team.schedule.previous` Same as above but for the last game played
+
 ```{
   "copyright" : "NHL and the NHL Shield are registered trademarks of the National Hockey League. NHL and NHL team marks are the property of the NHL and its teams. © NHL 2018. All Rights Reserved.",
   "teams" : [ {
@@ -75,7 +76,8 @@ including id value, name, jersey number and position details.
       "type" : "Defenseman",
       "abbreviation" : "D"
     }
-  },```
+  },
+```
 ---
 ### Divisions
 `GET https://statsapi.web.nhl.com/api/v1/divisions`  Returns full list of divisions
@@ -97,7 +99,8 @@ single division. This can show old inactive divisions such as 13 Patrick.
       "link" : "/api/v1/conferences/6"
     },
     "active" : true
-  },```
+  },
+```
 ---
 ### Conferences
 `GET https://statsapi.web.nhl.com/api/v1/conferences` Returns conference details
@@ -122,7 +125,8 @@ specific conference, also can look up id 7 for World Cup of Hockey.
     "shortName" : "West",
     "active" : true
   } ]
-}```
+}
+```
 ---
 ### People
 `GET https://statsapi.web.nhl.com/api/v1/people/ID` Gets details for a player, must
@@ -162,7 +166,8 @@ specify the id value in order to return data.
       "abbreviation" : "D"
     }
   } ]
-}```
+}
+```
 `GET https://statsapi.web.nhl.com/api/v1/people/ID/stats` Complex endpoint with
 lots of append options to change what kind of stats you wish to obtain
 #### Modifiers
@@ -198,7 +203,8 @@ and does not include things like evenTimeOnIce and other time related stats*
       }
     } ]
   } ]
-}```
+}
+```
 
 *however here is Alex Ovechkin's 20162017 season stats which include time information*
 
@@ -241,7 +247,8 @@ and does not include things like evenTimeOnIce and other time related stats*
       }
     } ]
   } ]
-}```
+}
+```
 `?stats=homeAndAway&season=20162017` Provides a split between home and away games.
 ```{
   "copyright" : "NHL and the NHL Shield are registered trademarks of the National Hockey League. NHL and NHL team marks are the property of the NHL and its teams. © NHL 2018. All Rights Reserved.",
@@ -313,7 +320,8 @@ and does not include things like evenTimeOnIce and other time related stats*
       "isHome" : false
     } ]
   } ]
-}```
+}
+```
 
 `?stats=winLoss&season=20162017` Very similar to the previous modifier except it provides the W/L/OT split instead of Home and Away
 
@@ -354,7 +362,8 @@ the rest of the league for a specific regularSeasonStatRankings
       }
     } ]
   } ]
-}```
+}
+```
 
 `?stats=goalsByGameSituation&season=20162017` Shows number on when goals for a
 player happened like how many in the shootout, how many in each period, etc.
@@ -388,7 +397,8 @@ player happened like how many in the shootout, how many in each period, etc.
       }
     } ]
   } ]
-}```
+}
+```
 
 `?stats=onPaceRegularSeason&season=20172018` This only works with the current
 in-progress season and shows **projected** totals based on current onPaceRegularSeason
@@ -430,7 +440,8 @@ in-progress season and shows **projected** totals based on current onPaceRegular
       }
     } ]
   } ]
-}```
+}
+```
 
 
 ---
