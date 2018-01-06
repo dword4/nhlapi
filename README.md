@@ -443,7 +443,6 @@ in-progress season and shows **projected** totals based on current onPaceRegular
 }
 ```
 
-
 ---
 ### Game
 `GET https://statsapi.web.nhl.com/api/v1/game/ID/feed/live` Returns all data about
@@ -455,3 +454,9 @@ with a JSON viewer.
 `GET https://statsapi.web.nhl.com/api/v1/game/ID/boxscore` Returns far less detail
 than `feed/live` and is much more suitable for post-game details including goals,
 shots, PIMs, blocked, takeaways, giveaways and hits.
+
+---
+### Standings
+
+`GET https://statsapi.web.nhl.com/api/v1/standings` Returns ordered standings data
+for each team broken up by divisions
