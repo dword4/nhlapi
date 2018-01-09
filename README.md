@@ -472,8 +472,7 @@ shots, PIMs, blocked, takeaways, giveaways and hits.
 
 `?startDate=2018-01-09` Start date for the search
 
-`?endDate=2018-01-12` End date fo rthe search
-
+`?endDate=2018-01-12` End date for the search
 
 `GET https://statsapi.web.nhl.com/api/v1/schedule?teamId=30` Returns Minnesota Wild games for the current day.
 
