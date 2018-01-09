@@ -16,6 +16,7 @@ for a single team instead of the entire league.
 
 `?expand=team.schedule.previous` Same as above but for the last game played
 
+`?expand=team.roster&season=20142015` Adding the season identifier shows the roster for that season
 ```{
   "copyright" : "NHL and the NHL Shield are registered trademarks of the National Hockey League. NHL and NHL team marks are the property of the NHL and its teams. © NHL 2018. All Rights Reserved.",
   "teams" : [ {
