@@ -456,6 +456,9 @@ with a JSON viewer.
 than `feed/live` and is much more suitable for post-game details including goals,
 shots, PIMs, blocked, takeaways, giveaways and hits.
 
+`GET http://statsapi.web.nhl.com/api/v1/game/ID/content` Complex endpoint returning
+multiple types of media relating to the game including videos of shots, goals and saves.
+
 ---
 ### Standings
 
