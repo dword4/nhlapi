@@ -742,3 +742,33 @@ multiple types of media relating to the game including videos of shots, goals an
 
 `GET https://statsapi.web.nhl.com/api/v1/standings` Returns ordered standings data
 for each team broken up by divisions
+
+---
+### Draft
+
+`GET https://statsapi.web.nhl.com/api/v1/draft/YEAR` Takes a YYYY format year and returns draft data
+
+```{
+  "copyright": "NHL and the NHL Shield are registered trademarks of the National Hockey League. NHL and NHL team marks are the property of the NHL and its teams. © NHL 2018. All Rights Reserved.",
+  "drafts": [{
+    "draftYear": 2017,
+    "rounds": [{
+      "roundNumber": 1,
+      "round": "1",
+      "picks": [{
+        "year": 2017,
+        "round": "1",
+        "pickOverall": 1,
+        "pickInRound": 1,
+        "team": {
+          "id": 1,
+          "name": "New Jersey Devils",
+          "link": "/api/v1/teams/1"
+        },
+        "prospect": {
+          "id": 65242,
+          "fullName": "Nico Hischier",
+          "link": "/api/v1/draft/prospects/65242"
+        }
+      },
+```
