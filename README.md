@@ -460,6 +460,284 @@ shots, PIMs, blocked, takeaways, giveaways and hits.
 multiple types of media relating to the game including videos of shots, goals and saves.
 
 ---
+### Schedule
+
+`GET https://statsapi.web.nhl.com/api/v1/schedule` Returns a list of data about the schedule for a specified date range. If no date range is specified, returns results from the current day.
+
+#### Modifiers
+`?expand=schedule.brodcasts` Shows the broadcasts of the game
+
+`?expand=schedule.linescore` Linescore for completed games
+
+`?expand=team.schedule.previous` Same as above but for the last game played
+
+`?teamID=30` Limit results to a specific team. Team ids can be found through the teams endpoint
+
+`?startDate=2018-01-09` Start date for the search
+
+`?endDate=2018-01-12` End date for the search
+
+`GET https://statsapi.web.nhl.com/api/v1/schedule?teamId=30` Returns Minnesota Wild games for the current day.
+
+```
+{
+  "copyright" : "NHL and the NHL Shield are registered trademarks of the National Hockey League. NHL and NHL team marks are the property of the NHL and its teams. © NHL 2018. All Rights Reserved.",
+  "totalItems" : 1,
+  "totalEvents" : 0,
+  "totalGames" : 1,
+  "totalMatches" : 0,
+  "wait" : 10,
+  "dates" : [ {
+    "date" : "2018-01-09",
+    "totalItems" : 1,
+    "totalEvents" : 0,
+    "totalGames" : 1,
+    "totalMatches" : 0,
+    "games" : [ {
+      "gamePk" : 2017020659,
+      "link" : "/api/v1/game/2017020659/feed/live",
+      "gameType" : "R",
+      "season" : "20172018",
+      "gameDate" : "2018-01-10T01:00:00Z",
+      "status" : {
+        "abstractGameState" : "Preview",
+        "codedGameState" : "1",
+        "detailedState" : "Scheduled",
+        "statusCode" : "1",
+        "startTimeTBD" : false
+      },
+      "teams" : {
+        "away" : {
+          "leagueRecord" : {
+            "wins" : 21,
+            "losses" : 16,
+            "ot" : 4,
+            "type" : "league"
+          },
+          "score" : 0,
+          "team" : {
+            "id" : 20,
+            "name" : "Calgary Flames",
+            "link" : "/api/v1/teams/20"
+          }
+        },
+        "home" : {
+          "leagueRecord" : {
+            "wins" : 22,
+            "losses" : 17,
+            "ot" : 3,
+            "type" : "league"
+          },
+          "score" : 0,
+          "team" : {
+            "id" : 30,
+            "name" : "Minnesota Wild",
+            "link" : "/api/v1/teams/30"
+          }
+        }
+      },
+      "venue" : {
+        "name" : "Xcel Energy Center",
+        "link" : "/api/v1/venues/null"
+      },
+      "content" : {
+        "link" : "/api/v1/game/2017020659/content"
+      }
+    } ],
+    "events" : [ ],
+    "matches" : [ ]
+  } ]
+}
+```
+
+`GET https://statsapi.web.nhl.com/api/v1/schedule?teamId=30?startDate=2018-01-02&endDate=20128-01-02` Returns Minnesota Wild games for January 2, 2018 with attached linescores and broadcasts.
+
+```{
+  "copyright" : "NHL and the NHL Shield are registered trademarks of the National Hockey League. NHL and NHL team marks are the property of the NHL and its teams. © NHL 2018. All Rights Reserved.",
+  "totalItems" : 1,
+  "totalEvents" : 0,
+  "totalGames" : 1,
+  "totalMatches" : 0,
+  "wait" : 10,
+  "dates" : [ {
+    "date" : "2018-01-02",
+    "totalItems" : 1,
+    "totalEvents" : 0,
+    "totalGames" : 1,
+    "totalMatches" : 0,
+    "games" : [ {
+      "gamePk" : 2017020608,
+      "link" : "/api/v1/game/2017020608/feed/live",
+      "gameType" : "R",
+      "season" : "20172018",
+      "gameDate" : "2018-01-03T01:00:00Z",
+      "status" : {
+        "abstractGameState" : "Final",
+        "codedGameState" : "7",
+        "detailedState" : "Final",
+        "statusCode" : "7",
+        "startTimeTBD" : false
+      },
+      "teams" : {
+        "away" : {
+          "leagueRecord" : {
+            "wins" : 17,
+            "losses" : 17,
+            "ot" : 5,
+            "type" : "league"
+          },
+          "score" : 1,
+          "team" : {
+            "id" : 13,
+            "name" : "Florida Panthers",
+            "link" : "/api/v1/teams/13"
+          }
+        },
+        "home" : {
+          "leagueRecord" : {
+            "wins" : 21,
+            "losses" : 16,
+            "ot" : 3,
+            "type" : "league"
+          },
+          "score" : 5,
+          "team" : {
+            "id" : 30,
+            "name" : "Minnesota Wild",
+            "link" : "/api/v1/teams/30"
+          }
+        }
+      },
+      "linescore" : {
+        "currentPeriod" : 3,
+        "currentPeriodOrdinal" : "3rd",
+        "currentPeriodTimeRemaining" : "Final",
+        "periods" : [ {
+          "periodType" : "REGULAR",
+          "startTime" : "2018-01-03T01:08:44Z",
+          "endTime" : "2018-01-03T01:44:06Z",
+          "num" : 1,
+          "ordinalNum" : "1st",
+          "home" : {
+            "goals" : 1,
+            "shotsOnGoal" : 13,
+            "rinkSide" : "right"
+          },
+          "away" : {
+            "goals" : 0,
+            "shotsOnGoal" : 9,
+            "rinkSide" : "left"
+          }
+        }, {
+          "periodType" : "REGULAR",
+          "startTime" : "2018-01-03T02:03:03Z",
+          "endTime" : "2018-01-03T02:48:52Z",
+          "num" : 2,
+          "ordinalNum" : "2nd",
+          "home" : {
+            "goals" : 3,
+            "shotsOnGoal" : 19,
+            "rinkSide" : "left"
+          },
+          "away" : {
+            "goals" : 0,
+            "shotsOnGoal" : 2,
+            "rinkSide" : "right"
+          }
+        }, {
+          "periodType" : "REGULAR",
+          "startTime" : "2018-01-03T03:07:33Z",
+          "endTime" : "2018-01-03T03:43:39Z",
+          "num" : 3,
+          "ordinalNum" : "3rd",
+          "home" : {
+            "goals" : 1,
+            "shotsOnGoal" : 9,
+            "rinkSide" : "right"
+          },
+          "away" : {
+            "goals" : 1,
+            "shotsOnGoal" : 15,
+            "rinkSide" : "left"
+          }
+        } ],
+        "shootoutInfo" : {
+          "away" : {
+            "scores" : 0,
+            "attempts" : 0
+          },
+          "home" : {
+            "scores" : 0,
+            "attempts" : 0
+          }
+        },
+        "teams" : {
+          "home" : {
+            "team" : {
+              "id" : 30,
+              "name" : "Minnesota Wild",
+              "link" : "/api/v1/teams/30"
+            },
+            "goals" : 5,
+            "shotsOnGoal" : 41,
+            "goaliePulled" : false,
+            "numSkaters" : 5,
+            "powerPlay" : false
+          },
+          "away" : {
+            "team" : {
+              "id" : 13,
+              "name" : "Florida Panthers",
+              "link" : "/api/v1/teams/13"
+            },
+            "goals" : 1,
+            "shotsOnGoal" : 26,
+            "goaliePulled" : false,
+            "numSkaters" : 5,
+            "powerPlay" : false
+          }
+        },
+        "powerPlayStrength" : "Even",
+        "hasShootout" : false,
+        "intermissionInfo" : {
+          "intermissionTimeRemaining" : 0,
+          "intermissionTimeElapsed" : 0,
+          "inIntermission" : false
+        },
+        "powerPlayInfo" : {
+          "situationTimeRemaining" : 0,
+          "situationTimeElapsed" : 0,
+          "inSituation" : false
+        }
+      },
+      "venue" : {
+        "name" : "Xcel Energy Center",
+        "link" : "/api/v1/venues/null"
+      },
+      "broadcasts" : [ {
+        "id" : 14,
+        "name" : "FS-N",
+        "type" : "home",
+        "site" : "nhl",
+        "language" : "en"
+      }, {
+        "id" : 12,
+        "name" : "FS-F",
+        "type" : "away",
+        "site" : "nhl",
+        "language" : "en"
+      } ],
+      "content" : {
+        "link" : "/api/v1/game/2017020608/content"
+      }
+    } ],
+    "events" : [ ],
+    "matches" : [ ]
+  } ]
+}
+```
+
+---
 ### Standings
 
 `GET https://statsapi.web.nhl.com/api/v1/standings` Returns ordered standings data
