@@ -744,6 +744,151 @@ multiple types of media relating to the game including videos of shots, goals an
 for each team broken up by divisions
 
 ---
+
+### Standings Types
+
+`GET https://statsapi.web.nhl.com/api/v1/standingsTypes` Returns all the standings types
+to be used in order do get a specific standings
+
+```{
+[ {
+  "name" : "regularSeason",
+  "description" : "Regular Season Standings"
+}, {
+  "name" : "wildCard",
+  "description" : "Wild card standings"
+}, {
+  "name" : "divisionLeaders",
+  "description" : "Division Leader standings"
+}, {
+  "name" : "wildCardWithLeaders",
+  "description" : "Wild card standings with Division Leaders"
+}, {
+  "name" : "preseason",
+  "description" : "Preseason Standings"
+}, {
+  "name" : "postseason",
+  "description" : "Postseason Standings"
+}, {
+  "name" : "byDivision",
+  "description" : "Standings by Division"
+}, {
+  "name" : "byConference",
+  "description" : "Standings by Conference"
+}, {
+  "name" : "byLeague",
+  "description" : "Standings by League"
+} ]
+```
+Ex: https://statsapi.web.nhl.com/api/v1/standings/wildCardWithLeaders?date=2018-01-16
+
+Returns the complete wildcard (with leaders) standings on 01/16/2018.
+
+---
+
+### Stats Types
+
+`GET https://statsapi.web.nhl.com/api/v1/statTypes` Returns all the stats types
+to be used in order do get a specific kind of player stats
+
+---
+
+### Team Stats
+
+`GET https://statsapi.web.nhl.com/api/v1/teams/5/stats` Returns current season stats and the current season rankings for a specific team
+
+Ex: 
+
+```{
+  "copyright" : "NHL and the NHL Shield are registered trademarks of the National Hockey League. NHL and NHL team marks are the property of the NHL and its teams. © NHL 2018. All Rights Reserved.",
+  "stats" : [ {
+    "type" : {
+      "displayName" : "statsSingleSeason"
+    },
+    "splits" : [ {
+      "stat" : {
+        "gamesPlayed" : 46,
+        "wins" : 24,
+        "losses" : 19,
+        "ot" : 3,
+        "pts" : 51,
+        "ptPctg" : "55.4",
+        "goalsPerGame" : 2.891,
+        "goalsAgainstPerGame" : 3.043,
+        "evGGARatio" : 0.6602,
+        "powerPlayPercentage" : "26.5",
+        "powerPlayGoals" : 43.0,
+        "powerPlayGoalsAgainst" : 28.0,
+        "powerPlayOpportunities" : 162.0,
+        "penaltyKillPercentage" : "82.6",
+        "shotsPerGame" : 34.7174,
+        "shotsAllowed" : 30.3043,
+        "winScoreFirst" : 0.76,
+        "winOppScoreFirst" : 0.238,
+        "winLeadFirstPer" : 0.857,
+        "winLeadSecondPer" : 1.0,
+        "winOutshootOpp" : 0.6,
+        "winOutshotByOpp" : 0.375,
+        "faceOffsTaken" : 2889.0,
+        "faceOffsWon" : 1474.0,
+        "faceOffsLost" : 1415.0,
+        "faceOffWinPercentage" : "51.0",
+        "shootingPctg" : 8.3,
+        "savePctg" : 0.9
+      },
+      "team" : {
+        "id" : 5,
+        "name" : "Pittsburgh Penguins",
+        "link" : "/api/v1/teams/5"
+      }
+    } ]
+  }, {
+    "type" : {
+      "displayName" : "regularSeasonStatRankings"
+    },
+    "splits" : [ {
+      "stat" : {
+        "wins" : "15th",
+        "losses" : "25th",
+        "ot" : "30th",
+        "pts" : "17th",
+        "ptPctg" : "21st",
+        "goalsPerGame" : "15th",
+        "goalsAgainstPerGame" : "22nd",
+        "evGGARatio" : "30th",
+        "powerPlayPercentage" : "1st",
+        "powerPlayGoals" : "1st",
+        "powerPlayGoalsAgainst" : "17th",
+        "powerPlayOpportunities" : "4th",
+        "penaltyKillOpportunities" : "28th",
+        "penaltyKillPercentage" : "10th",
+        "shotsPerGame" : "1st",
+        "shotsAllowed" : "5th",
+        "winScoreFirst" : "8th",
+        "winOppScoreFirst" : "24th",
+        "winLeadFirstPer" : "10th",
+        "winLeadSecondPer" : "1st",
+        "winOutshootOpp" : "6th",
+        "winOutshotByOpp" : "6th",
+        "faceOffsTaken" : "1st",
+        "faceOffsWon" : "3rd",
+        "faceOffsLost" : "24th",
+        "faceOffWinPercentage" : "12th",
+        "savePctRank" : "25th",
+        "shootingPctRank" : "24th"
+      },
+      "team" : {
+        "id" : 5,
+        "name" : "Pittsburgh Penguins",
+        "link" : "/api/v1/teams/5"
+      }
+    } ]
+  } ]
+}
+```
+
+---
+
 ### Draft
 
 `GET https://statsapi.web.nhl.com/api/v1/draft/YEAR` Takes a YYYY format year and returns draft data
