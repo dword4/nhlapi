@@ -476,11 +476,11 @@ The first 4 digits identify the season of the game (ie. 2017 for the 2017-2018 s
 
 `?expand=schedule.linescore` Linescore for completed games
 
-`?expand=team.schedule.previous` Same as above but for the last game played
-
 `?expand=schedule.ticket` Provides the different places to buy tickets for the upcoming games
 
 `?teamID=30` Limit results to a specific team. Team ids can be found through the teams endpoint
+
+`?date=2018-01-09` Single defined search date
 
 `?startDate=2018-01-09` Start date for the search
 
