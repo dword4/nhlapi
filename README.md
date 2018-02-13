@@ -478,7 +478,7 @@ The first 4 digits identify the season of the game (ie. 2017 for the 2017-2018 s
 
 `?expand=schedule.ticket` Provides the different places to buy tickets for the upcoming games
 
-`?teamID=30` Limit results to a specific team. Team ids can be found through the teams endpoint
+`?teamId=30` Limit results to a specific team. Team ids can be found through the teams endpoint
 
 `?date=2018-01-09` Single defined date for the search
 
@@ -751,6 +751,11 @@ The first 4 digits identify the season of the game (ie. 2017 for the 2017-2018 s
 
 `GET https://statsapi.web.nhl.com/api/v1/standings` Returns ordered standings data
 for each team broken up by divisions
+
+#### Modifiers
+`?season=20142015` Show standings for particular season
+
+`?date=2018-01-16` Show standings for particular date
 
 ---
 
