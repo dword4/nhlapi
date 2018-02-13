@@ -472,7 +472,7 @@ The first 4 digits identify the season of the game (ie. 2017 for the 2017-2018 s
 `GET https://statsapi.web.nhl.com/api/v1/schedule` Returns a list of data about the schedule for a specified date range. If no date range is specified, returns results from the current day.
 
 #### Modifiers
-`?expand=schedule.brodcasts` Shows the broadcasts of the game
+`?expand=schedule.broadcasts` Shows the broadcasts of the game
 
 `?expand=schedule.linescore` Linescore for completed games
 
@@ -480,7 +480,7 @@ The first 4 digits identify the season of the game (ie. 2017 for the 2017-2018 s
 
 `?teamID=30` Limit results to a specific team. Team ids can be found through the teams endpoint
 
-`?date=2018-01-09` Single defined search date
+`?date=2018-01-09` Single defined date for the search
 
 `?startDate=2018-01-09` Start date for the search
 
