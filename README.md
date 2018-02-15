@@ -806,7 +806,7 @@ to be used in order do get a specific kind of player stats
 
 `GET https://statsapi.web.nhl.com/api/v1/teams/5/stats` Returns current season stats and the current season rankings for a specific team
 
-Ex: 
+Ex:
 
 ```{
   "copyright" : "NHL and the NHL Shield are registered trademarks of the National Hockey League. NHL and NHL team marks are the property of the NHL and its teams. © NHL 2018. All Rights Reserved.",
@@ -900,6 +900,8 @@ Ex:
 
 ### Draft
 
+`GET https://statsapi.web.nhl.com/api/v1/draft` Get round-by-round data for current year's NHL Entry Draft.
+
 `GET https://statsapi.web.nhl.com/api/v1/draft/YEAR` Takes a YYYY format year and returns draft data
 
 ```{
@@ -925,4 +927,49 @@ Ex:
           "link": "/api/v1/draft/prospects/65242"
         }
       },
+```
+
+### Prospects
+
+`GET https://statsapi.web.nhl.com/api/v1/draft/prospects` Get all NHL Entry Draft prospects.
+
+`GET https://statsapi.web.nhl.com/api/v1/draft/prospects/ID` Get an NHL Entry Draft prospect.
+
+```json
+{
+  "copyright" : "NHL and the NHL Shield are registered trademarks of the National Hockey League. NHL and NHL team marks are the property of the NHL and its teams. © NHL 2018. All Rights Reserved.",
+  "prospects" : [ {
+    "id" : 53727,
+    "fullName" : "Zbynek Horak",
+    "link" : "/api/v1/draft/prospects/53727",
+    "firstName" : "Zbynek",
+    "lastName" : "Horak",
+    "birthDate" : "1995-03-08",
+    "birthCountry" : "CZE",
+    "height" : "5' 10\"",
+    "weight" : 168,
+    "shootsCatches" : "L",
+    "primaryPosition" : {
+      "code" : "L",
+      "name" : "Left Wing",
+      "type" : "Forward",
+      "abbreviation" : "LW"
+    },
+    "draftStatus" : "Elig",
+    "prospectCategory" : {
+      "id" : 2,
+      "shortName" : "Euro Skater",
+      "name" : "European Skater"
+    },
+    "amateurTeam" : {
+      "name" : "Znojmo Jr.",
+      "link" : "/api/v1/teams/null"
+    },
+    "amateurLeague" : {
+      "name" : "AUSTRIA-JR.",
+      "link" : "/api/v1/league/null"
+    },
+    "ranks" : { }
+  } ]
+}
 ```
