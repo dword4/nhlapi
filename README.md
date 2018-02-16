@@ -781,7 +781,7 @@ The first 4 digits identify the season of the game (ie. 2017 for the 2017-2018 s
 `GET https://statsapi.web.nhl.com/api/v1/standings` Returns ordered standings data
 for each team broken up by divisions
 
-## Modifiers
+#### Modifiers
 `?season=20032004` Standings for a specified season
 
 `?date=2018-01-09` Standings on a specified date
