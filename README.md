@@ -2,7 +2,36 @@
 
 All of this has been compiled and tested by hand in Jan of 2018, prior to this most of the information was spread across the internet in various posts and not available in a cohesive
 single place.
-### Teams
+
+[OpenAPI 3.0 specification file for the NHL API](https://github.com/erunion/sport-api-specifications/tree/master/nhl) thanks to @[erunion](https://github.com/erunion)
+
+[Teams](#teams)
+
+[Divisions](#divisions)
+
+[Conferences](#conferences)
+
+[People](#people)
+
+[Game-IDs](#game-ids)
+
+[Schedule](#schedule)
+
+[Standings](#standings)
+
+[Standings Types](#standings-types)
+
+[Stats Types](#stats-types)
+
+[Team Stats](#team-stats)
+
+[Draft](#draft)
+
+[Prospects](#prospects)
+
+---
+
+### <a name="teams"></a>Teams
 
 `GET https://statsapi.web.nhl.com/api/v1/teams` Returns a list of data about
 all teams including their id, venue details, division, conference and franchise information.
@@ -80,7 +109,7 @@ including id value, name, jersey number and position details.
   },
 ```
 ---
-### Divisions
+### <a name="divisions"></a>Divisions
 `GET https://statsapi.web.nhl.com/api/v1/divisions`  Returns full list of divisions
 and associated data like which conference they belong to, id values and API links.
 Does not show inactive divisions
@@ -103,7 +132,7 @@ single division. This can show old inactive divisions such as 13 Patrick.
   },
 ```
 ---
-### Conferences
+### <a name="conferences"></a>Conferences
 `GET https://statsapi.web.nhl.com/api/v1/conferences` Returns conference details
 for all current NHL conferences.
 
@@ -129,7 +158,7 @@ specific conference, also can look up id 7 for World Cup of Hockey.
 }
 ```
 ---
-### People
+### <a name="people"></a>People
 `GET https://statsapi.web.nhl.com/api/v1/people/ID` Gets details for a player, must
 specify the id value in order to return data.
 ```{
@@ -445,7 +474,7 @@ in-progress season and shows **projected** totals based on current onPaceRegular
 ```
 
 ---
-### Game
+### <a name="game"></a>Game
 `GET https://statsapi.web.nhl.com/api/v1/game/ID/feed/live` Returns all data about
 a specified game id including play data with on-ice coordinates and post-game
 details like first, second and third stars and any details about shootouts.  The
@@ -463,11 +492,11 @@ multiple types of media relating to the game including videos of shots, goals an
 Returns updates (like new play events, updated stats for boxscore, etc.) for the specified game ID
 since the given startTimecode. If the startTimecode param is missing, returns an empty array.
 
-#### Game IDs
+#### <a name="game-ids">Game IDs
 The first 4 digits identify the season of the game (ie. 2017 for the 2017-2018 season). The next 2 digits give the type of game, where 01 = preseason, 02 = regular season, 03 = playoffs, 04 = all-star. The final 4 digits identify the specific game number. For regular season and preseason games, this ranges from 0001 to the number of games played. (1271 for seasons with 31 teams (2017 and onwards) and 1230 for seasons with 30 teams). For playoff games, the 2nd digit of the specific number gives the round of the playoffs, the 3rd digit specifies the matchup, and the 4th digit specifies the game (out of 7).
 
 ---
-### Schedule
+### <a name="schedule">Schedule
 
 `GET https://statsapi.web.nhl.com/api/v1/schedule` Returns a list of data about the schedule for a specified date range. If no date range is specified, returns results from the current day.
 
@@ -747,19 +776,19 @@ The first 4 digits identify the season of the game (ie. 2017 for the 2017-2018 s
 ```
 
 ---
-### Standings
+### <a name="standings">Standings
 
 `GET https://statsapi.web.nhl.com/api/v1/standings` Returns ordered standings data
 for each team broken up by divisions
 
-#### Modifiers
-`?season=20142015` Show standings for particular season
+## Modifiers
+`?season=20032004` Standings for a specified season
 
-`?date=2018-01-16` Show standings for particular date
+`?date=2018-01-09` Standings on a specified date
 
 ---
 
-### Standings Types
+### <a name="standings-types">Standings Types
 
 `GET https://statsapi.web.nhl.com/api/v1/standingsTypes` Returns all the standings types
 to be used in order do get a specific standings
@@ -800,18 +829,18 @@ Returns the complete wildcard (with leaders) standings on 01/16/2018.
 
 ---
 
-### Stats Types
+### <a name="stats-types">Stats Types
 
 `GET https://statsapi.web.nhl.com/api/v1/statTypes` Returns all the stats types
 to be used in order do get a specific kind of player stats
 
 ---
 
-### Team Stats
+### <a name="team-stats">Team Stats
 
 `GET https://statsapi.web.nhl.com/api/v1/teams/5/stats` Returns current season stats and the current season rankings for a specific team
 
-Ex: 
+Ex:
 
 ```{
   "copyright" : "NHL and the NHL Shield are registered trademarks of the National Hockey League. NHL and NHL team marks are the property of the NHL and its teams. © NHL 2018. All Rights Reserved.",
@@ -903,7 +932,9 @@ Ex:
 
 ---
 
-### Draft
+### <a name="draft">Draft
+
+`GET https://statsapi.web.nhl.com/api/v1/draft` Get round-by-round data for current year's NHL Entry Draft.
 
 `GET https://statsapi.web.nhl.com/api/v1/draft/YEAR` Takes a YYYY format year and returns draft data
 
@@ -930,4 +961,49 @@ Ex:
           "link": "/api/v1/draft/prospects/65242"
         }
       },
+```
+
+### <a name="prospects">Prospects
+
+`GET https://statsapi.web.nhl.com/api/v1/draft/prospects` Get all NHL Entry Draft prospects.
+
+`GET https://statsapi.web.nhl.com/api/v1/draft/prospects/ID` Get an NHL Entry Draft prospect.
+
+```json
+{
+  "copyright" : "NHL and the NHL Shield are registered trademarks of the National Hockey League. NHL and NHL team marks are the property of the NHL and its teams. © NHL 2018. All Rights Reserved.",
+  "prospects" : [ {
+    "id" : 53727,
+    "fullName" : "Zbynek Horak",
+    "link" : "/api/v1/draft/prospects/53727",
+    "firstName" : "Zbynek",
+    "lastName" : "Horak",
+    "birthDate" : "1995-03-08",
+    "birthCountry" : "CZE",
+    "height" : "5' 10\"",
+    "weight" : 168,
+    "shootsCatches" : "L",
+    "primaryPosition" : {
+      "code" : "L",
+      "name" : "Left Wing",
+      "type" : "Forward",
+      "abbreviation" : "LW"
+    },
+    "draftStatus" : "Elig",
+    "prospectCategory" : {
+      "id" : 2,
+      "shortName" : "Euro Skater",
+      "name" : "European Skater"
+    },
+    "amateurTeam" : {
+      "name" : "Znojmo Jr.",
+      "link" : "/api/v1/teams/null"
+    },
+    "amateurLeague" : {
+      "name" : "AUSTRIA-JR.",
+      "link" : "/api/v1/league/null"
+    },
+    "ranks" : { }
+  } ]
+}
 ```
