@@ -588,7 +588,7 @@ The first 4 digits identify the season of the game (ie. 2017 for the 2017-2018 s
 }
 ```
 
-`GET https://statsapi.web.nhl.com/api/v1/schedule?teamId=30?startDate=2018-01-02&endDate=2018-01-02` Returns Minnesota Wild games for January 2, 2018 with attached linescores and broadcasts.
+`GET https://statsapi.web.nhl.com/api/v1/schedule?teamId=30&startDate=2018-01-02&endDate=2018-01-02` Returns Minnesota Wild games for January 2, 2018 with attached linescores and broadcasts.
 
 ```{
   "copyright" : "NHL and the NHL Shield are registered trademarks of the National Hockey League. NHL and NHL team marks are the property of the NHL and its teams. © NHL 2018. All Rights Reserved.",
