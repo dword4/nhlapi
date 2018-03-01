@@ -781,11 +781,101 @@ The first 4 digits identify the season of the game (ie. 2017 for the 2017-2018 s
 `GET https://statsapi.web.nhl.com/api/v1/standings` Returns ordered standings data
 for each team broken up by divisions
 
+```
+{
+  "team" : {
+    "id" : 52,
+    "name" : "Winnipeg Jets",
+    "link" : "/api/v1/teams/52"
+  },
+  "leagueRecord" : {
+    "wins" : 37,
+    "losses" : 17,
+    "ot" : 9,
+    "type" : "league"
+  },
+  "goalsAgainst" : 170,
+  "goalsScored" : 213,
+  "points" : 83,
+  "divisionRank" : "2",
+  "conferenceRank" : "3",
+  "leagueRank" : "6",
+  "wildCardRank" : "0",
+  "row" : 35,
+  "gamesPlayed" : 63,
+  "streak" : {
+    "streakType" : "losses",
+    "streakNumber" : 1,
+    "streakCode" : "L1"
+  },
+}
+```
+
 #### Modifiers
 `?season=20032004` Standings for a specified season
 
 `?date=2018-01-09` Standings on a specified date
 
+`?expand=standings.record` Detailed information for each team including home and away records, record in shootouts, last ten games, and split head-to-head records against divisions and conferences
+
+```
+{
+  "records" : {
+    "divisionRecords" : [ {
+      "wins" : 11,
+      "losses" : 7,
+      "ot" : 2,
+      "type" : "Central"
+    }, {
+      "wins" : 5,
+      "losses" : 3,
+      "ot" : 3,
+      "type" : "Atlantic"
+    }, {
+      "wins" : 15,
+      "losses" : 4,
+      "ot" : 2,
+      "type" : "Pacific"
+    }, {
+      "wins" : 6,
+      "losses" : 3,
+      "ot" : 2,
+      "type" : "Metropolitan"
+    } ],
+    "overallRecords" : [ {
+      "wins" : 23,
+      "losses" : 7,
+      "ot" : 2,
+      "type" : "home"
+    }, {
+      "wins" : 14,
+      "losses" : 10,
+      "ot" : 7,
+      "type" : "away"
+    }, {
+      "wins" : 2,
+      "losses" : 2,
+      "type" : "shootOuts"
+    }, {
+      "wins" : 6,
+      "losses" : 4,
+      "ot" : 0,
+      "type" : "lastTen"
+    } ],
+    "conferenceRecords" : [ {
+      "wins" : 11,
+      "losses" : 6,
+      "ot" : 5,
+      "type" : "Eastern"
+    }, {
+      "wins" : 26,
+      "losses" : 11,
+      "ot" : 4,
+      "type" : "Western"
+    } ]
+  }
+}
+```
 ---
 
 ### <a name="standings-types">Standings Types
