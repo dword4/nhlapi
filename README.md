@@ -365,6 +365,8 @@ and does not include things like evenTimeOnIce and other time related stats*
 
 `?stats=vsTeam&season=20162017` Conference stats split
 
+`?stats=gameLog&season=20162017` Provides a game log showing stats for each game of a season
+
 `?stats=regularSeasonStatRankings&season=20162017` Returns where someone stands vs
 the rest of the league for a specific regularSeasonStatRankings
 ```{
