@@ -39,13 +39,22 @@ all teams including their id, venue details, division, conference and franchise 
 `GET https://statsapi.web.nhl.com/api/v1/teams/ID` Returns the same information as above just
 for a single team instead of the entire league.
 #### Modifiers
-`?expand=team.roster` Shows roster of active players for the specified team
+`?expand=team.roster` Shows roster of active players for the specified team 
+
+`?expand=person.names` Same as above, but gives less info.
 
 `?expand=team.schedule.next` Returns details of the upcoming game for a team
 
 `?expand=team.schedule.previous` Same as above but for the last game played
 
+`?expand=team.stats` Returns the teams stats for the season
+
 `?expand=team.roster&season=20142015` Adding the season identifier shows the roster for that season
+
+`?teamId=4,5,29` Can string team id together to get multiple teams
+
+`?stats=statsSingleSeasonPlayoffs` Speciy which stats to get. Not fully sure all of the values
+
 ```{
   "copyright" : "NHL and the NHL Shield are registered trademarks of the National Hockey League. NHL and NHL team marks are the property of the NHL and its teams. © NHL 2018. All Rights Reserved.",
   "teams" : [ {
