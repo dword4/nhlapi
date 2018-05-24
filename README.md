@@ -29,6 +29,8 @@ single place.
 
 [Prospects](#prospects)
 
+[Awards](#awards)
+
 ---
 
 ### <a name="teams"></a>Teams
@@ -1106,5 +1108,27 @@ Ex:
     },
     "ranks" : { }
   } ]
+}
+```
+
+### <a name="awards">Awards
+
+`GET https://statsapi.web.nhl.com/api/v1/awards` Get all NHL Awards.
+
+`GET https://statsapi.web.nhl.com/api/v1/awards/ID` Get an NHL Award.
+
+```json
+{
+  "copyright": "NHL and the NHL Shield are registered trademarks of the National Hockey League. NHL and NHL team marks are the property of the NHL and its teams. © NHL 2018. All Rights Reserved.",
+  "awards": [ {
+    "name": "Stanley Cup",
+    "shortName": "The Cup",
+    "description": "History: The Stanley Cup, the oldest trophy competed for by professional athletes in North America, was donated by Frederick Arthur, Lord Stanley of Preston and son of the Earl of Derby, in 1893. Lord Stanley purchased the trophy for 10 guineas ($50 at that time) for presentation to the amateur hockey champions of Canada. Since 1906, when Canadian teams began to pay their players openly, the Stanley Cup has been the symbol of professional hockey supremacy. It has been contested only by NHL teams since 1926-27 and has been under the exclusive control of the NHL since 1947.",
+    "recipientType": "Team",
+    "history": "It all started on March 18, 1892, at a dinner of the Ottawa Amateur Athletic Association. Lord Kilcoursie, a player on the Ottawa Rebels hockey club from Government House, delivered the following message on behalf of Lord Stanley, the Earl of Preston and Governor General of Canada  -- &quot;I have for some time been thinking that it would be a good thing if there were a challenge cup which should be held from year to year by the champion hockey team in the Dominion (of Canada).  There does not appear to be any such outward sign of a championship at present, and considering the general interest which matches now elicit, and the importance of having the game played fairly and under rules generally recognized, I am willing to give a cup which shall be held from year to year by the winning team.&quot; --  Shortly thereafter, Lord Stanley purchased a silver cup measuring 7.5 inches high by 11.5 inches across for the sum of 10 guineas (approximately $50); appointed two Ottawa gentlemen, Sheriff John Sweetland and Philip D. Ross, as trustees of that cup.  The first winner of the Stanley Cup was the Montreal Amateur Athletic Association (AAA) hockey club, champions of the Amateur Hockey Association of Canada for 1893. Ironically, Lord Stanley never witnessed a championship game nor attended a presentation of his trophy, having returned to his native England in the midst of the 1893 season. Nevertheless, the quest for his trophy has become one of the worlds most prestigious sporting competitions.",
+    "imageUrl": "http://3.cdn.nhle.com/nhl/images/upload/2017/09/Stanley-Cup.jpg",
+    "homePageUrl": "http://www.nhl.com/cup/index.html",
+    "link": "/api/v1/awards/1"
+  }]
 }
 ```
