@@ -1,3 +1,7 @@
+# New Location >> https://gitlab.com/dword4/nhlapi
+
+**I will no longer be maintaining the repo at this(github) location but it will remain up for posterity sake, the above link will contain all future work on the documentation.**
+
 # NHL API Documentation
 
 All of this has been compiled and tested by hand in Jan of 2018, prior to this most of the information was spread across the internet in various posts and not available in a cohesive
